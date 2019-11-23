@@ -1,0 +1,8 @@
+{
+  "name" : "fagotin",
+  "version" : "1.0.0a",
+  "description" : "Discord bot that have different capabilities: tag and search files, look for League of Legends summoners, champions...",
+  "main" : "bot.js",
+  "author" : "cmhernandezdel",
+  "dependencies" : {}
+}
