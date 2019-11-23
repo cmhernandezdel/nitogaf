@@ -1,23 +1,21 @@
-var Discord = require('discord.io');
-var auth = require('./auth.json');
-var commands = require('./commands.json');
+const Discord = require('discord.js');
+var auth = require('./keys/auth.json');
+var commandsFile = require('./commands.json');
 
-var bot = new Discord.client({
-  token: auth.token,
-  autorun: true
-});
+var bot = new Discord.Client();
 
-bot.on('message', function (user, userID, channelID, message, evt) {
-  if(message.substring(0, 1) == '!'){
-    var args = message.substring(1).split(' ');
+bot.on('message', msg => {
+  if(msg.content.substring(0, 1) === '!'){
+    var args = msg.content.substring(1).split(' ');
     var cmd = args[0];
 
-    if(cmd in commands){
-      var Executor = require(commands[cmd]);
-      var commandExecutor = new Executor();
-      commandExecutor.invoke();
-      delete require.cache[require.resolve(Executor)];
+    if(cmd in commandsFile){
+      let Executor = require(commandsFile[cmd]);
+      let response = Executor['invoke'](args);
+      msg.reply(response);
+      delete require.cache[require.resolve(commandsFile[cmd])];
     }
-    
   }
 });
+
+bot.login(auth.token);

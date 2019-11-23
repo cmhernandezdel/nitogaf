@@ -1,8 +1,5 @@
 {
-  "commands" :
-  [
-    { "file" : "./commands/file.js" },
-    { "summoner" : "./commands/summoner.js "},
-    { "champion" : "./commands/champion.js "}
-  ]
+  "file": "./commands/file.js",
+  "summoner": "./commands/summoner.js",
+  "champion": "./commands/champion.js"
 }
