@@ -5,7 +5,9 @@ const endPoint= "/lol/summoner/v4/summoners/by-name/";
 
 
 module.exports = {
-  invoke: function (args) {
-    HttpReq['httpGET'](basePath + endPoint + args[1], apiKey.token);
+  invoke: async (args) => {
+    return HttpReq['httpGET'](basePath + endPoint + args[1], apiKey.token)
+    .then(res => res)
+    .catch(err => console.log(err))
   }
 };
