@@ -12,6 +12,5 @@ module.exports = {
     })
     .then(res => res.data)
     .catch(err => console.log(err))
-  }
-  
+  } 
 }

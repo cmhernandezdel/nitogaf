@@ -17,7 +17,7 @@ bot.on('message', msg => {
       let Executor = require(commandsFile[cmd]);
       Executor['invoke'](args)
       .then(res => {
-        msg.reply(res.name)
+        msg.reply(res)
       } )
       .catch(err => msg.reply('Sorry, I didn\'t found that summoner.'))
       delete require.cache[require.resolve(commandsFile[cmd])];
