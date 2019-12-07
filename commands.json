@@ -1,5 +1,18 @@
 {
-  "file": "./commands/file.js",
-  "summoner": "./commands/summoner.js",
-  "champion": "./commands/champion.js"
+  "file": {
+    "location": "./commands/file.js",
+    "description": "Locate a file in the server (not implemented yet)"
+  },
+  "summoner": {
+    "location": "./commands/summoner.js",
+    "description": "Get information from a League of Legends summoner (working on it!)"
+  },
+  "champion": {
+    "location": "./commands/champion.js",
+    "description": "Get the typical build, runes, etc. from a League of Legends champion (not implemented yet)"
+  },
+  "list": {
+    "location": "./commands/list.js",
+    "description": "List all commands"
+  }
 }

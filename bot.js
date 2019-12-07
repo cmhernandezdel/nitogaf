@@ -14,13 +14,13 @@ bot.on('message', msg => {
     var cmd = args[0];
 
     if(cmd in commandsFile){
-      let Executor = require(commandsFile[cmd]);
+      let Executor = require(commandsFile[cmd]['location']);
       Executor['invoke'](args)
       .then(res => {
         msg.reply(res)
       } )
       .catch(err => msg.reply('Sorry, I didn\'t found that summoner.'))
-      delete require.cache[require.resolve(commandsFile[cmd])];
+      delete require.cache[require.resolve(commandsFile[cmd]['location'])];
     }
   }
 });
