@@ -4,20 +4,26 @@ function parseCommand(command){
   var checkingArguments = true
   var params = "";
 
+  command.shift() // remove the first item
+
   for(var p in command){
-    if(contains("-", p) && checkingArguments){
-      argsList.push(p.substr(1))
+    let val = command[p]
+    if(contains("-", val) && checkingArguments){
+      argsList.push(val.substr(1))
     }
-    else if(!contains("-", p) && checkingArguments){
+    else if(!contains("-", val) && checkingArguments){
       checkingArguments = false
-      params += p
+      params += val + " "
     }
-    else{
-      params += p
+    else if (!contains("-", val) && !checkingArguments){
+      params += val + " "
     }
   }
 
-  commandObj['key'] = 'value'
+  params = params.substring(0, params.length-1) // remove trailing space
+
+  commandObj['args'] = argsList
+  commandObj['params'] = params
   console.log(commandObj)
 }
 
