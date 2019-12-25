@@ -30,6 +30,7 @@ function parseCommand(command){
   commandObj['args'] = argsList
   commandObj['params'] = params
   return commandObj
+}
 
 function contains(substr, str){
   if(str.indexOf(substr) > -1) {
