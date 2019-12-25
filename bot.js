@@ -13,10 +13,10 @@ bot.on('message', msg => {
   if(msg.content.substring(0, 1) === '!'){
     var args = msg.content.substring(1).split(' ');
     var cmd = args[0];
-    console.log(parser.parse(args))
+    var commandObj = parser.parse(args)
 
     if(cmd in commandsFile){
-      let Executor = require(commandsFile[cmd]['location']);
+      let Executor = require(commandsFile[commandObj['command']]['location']);
       Executor['invoke'](args)
       .then(res => {
         msg.reply(res)

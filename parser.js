@@ -1,8 +1,13 @@
+// parses a command
+// a command has the structure !<command> [-<param>...] [<argument>...]
+// returns an object with fields command, args and params
 function parseCommand(command){
   var commandObj = {}
   var argsList = []
   var checkingArguments = true
-  var params = "";
+  var params = ""
+
+  commandObj['command'] = command[0]
 
   command.shift() // remove the first item
 
@@ -24,8 +29,7 @@ function parseCommand(command){
 
   commandObj['args'] = argsList
   commandObj['params'] = params
-  console.log(commandObj)
-}
+  return commandObj
 
 function contains(substr, str){
   if(str.indexOf(substr) > -1) {
