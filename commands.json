@@ -6,7 +6,7 @@
   "summoner": {
     "location": "./commands/summoner.js",
     "description": "Get information from a League of Legends summoner (working on it!)",
-    "arguments": ["rank"]
+    "arguments": ["rank", "winrate"]
   },
   "champion": {
     "location": "./commands/champion.js",
