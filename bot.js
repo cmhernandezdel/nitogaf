@@ -17,7 +17,7 @@ bot.on('message', msg => {
 
     if(cmd in commandsFile){
       let Executor = require(commandsFile[commandObj['command']]['location']);
-      Executor['invoke'](args)
+      Executor['invoke'](commandObj)
       .then(res => {
         msg.reply(res)
       } )

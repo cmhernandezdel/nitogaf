@@ -11,13 +11,15 @@ async function checkELO(accountId){
 }
 
 module.exports = {
-  invoke: async (args) => {
-    return HttpReq['httpGET'](basePath + byName + args[1], apiKey.token)
-    .then(summonerData => { 
-      return checkELO(summonerData.id)
-      .then(moreSummonerData => (moreSummonerData[0].tier + " " + moreSummonerData[0].rank))
+  invoke: async (commandObj) => {
+    if(commandObj['args'].includes("rank")){
+      return HttpReq['httpGET'](basePath + byName + commandObj["params"], apiKey.token)
+      .then(summonerData => { 
+        return checkELO(summonerData.id)
+        .then(moreSummonerData => (moreSummonerData[0].tier + " " + moreSummonerData[0].rank))
+        .catch(err => console.log(err))
+      })
       .catch(err => console.log(err))
-    })
-    .catch(err => console.log(err))
+    }
   }
 };
