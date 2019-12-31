@@ -2,6 +2,7 @@ const HttpReq = require('../requests/httpget.js');
 const apiKey = require('../keys/riot.json');
 const basePath = "https://euw1.api.riotgames.com";
 const byName= "/lol/summoner/v4/summoners/by-name/";
+const championList = require('../data/champions.json');
 
 async function getSummonerData(accountId){
   let endpoint = "/lol/league/v4/entries/by-summoner/";
@@ -42,6 +43,20 @@ module.exports = {
       .catch(err => console.log(err));
     }
     
+
+    // main
+    if(commandObj['args'].includes("main")){
+      await getMain(accountId)
+      .then(mainData => {
+        Object.keys(championList['data']).forEach(function(champName) {
+          if(championList['data'][champName].key == mainData[0].championId){
+            response += "Main champion (most mastery points): " + champName + "\n";
+          }
+        });
+      })
+      .catch(err => console.log(err));
+    }
+
     return response;
   }
   
