@@ -7,6 +7,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
-    "discord.js": "^11.5.1"
+    "discord.js": "^11.5.1",
+    "wordreference-api": "^1.1.0"
   }
 }

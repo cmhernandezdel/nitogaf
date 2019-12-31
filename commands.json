@@ -15,5 +15,10 @@
   "list": {
     "location": "./commands/list.js",
     "description": "List all commands."
+  },
+  "translate": {
+    "location": "./commands/translate.js",
+    "description": "Translates the word to the language passed as argument",
+    "arguments": ["en", "es"]
   }
 }
