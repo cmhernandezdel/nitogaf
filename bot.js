@@ -21,7 +21,7 @@ bot.on('message', msg => {
       .then(res => {
         msg.reply(res)
       } )
-      .catch(err => msg.reply('Could not perform operation. Type !help to see the commands.'))
+      .catch(err => msg.reply('Could not perform operation. Type !list to see the commands.'))
       delete require.cache[require.resolve(commandsFile[cmd]['location'])];
     }
   }

@@ -5,8 +5,8 @@
   },
   "summoner": {
     "location": "./commands/summoner.js",
-    "description": "Get information from a League of Legends summoner (working on it!)",
-    "arguments": ["rank", "winrate"]
+    "description": "Get information from a League of Legends summoner.",
+    "arguments": ["rank", "winrate", "main"]
   },
   "champion": {
     "location": "./commands/champion.js",
@@ -14,6 +14,6 @@
   },
   "list": {
     "location": "./commands/list.js",
-    "description": "List all commands"
+    "description": "List all commands."
   }
 }
