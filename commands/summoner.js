@@ -2,6 +2,7 @@ const HttpReq = require('../requests/httpget.js');
 const apiKey = require('../keys/riot.json');
 const basePath = "https://euw1.api.riotgames.com";
 const byName= "/lol/summoner/v4/summoners/by-name/";
+const mastery = "/lol/champion-mastery/v4/champion-masteries/by-summoner/"
 
 async function getSummonerData(accountId){
   const endpoint = "/lol/league/v4/entries/by-summoner/"
@@ -12,7 +13,8 @@ async function getSummonerData(accountId){
 
 module.exports = {
   invoke: async (commandObj) => {
-    var response = "";
+    let response = "";
+    let 
 
     // rank and LP
     if(commandObj['args'].includes("rank")){
@@ -39,6 +41,15 @@ module.exports = {
       })
       .catch(err => console.log(err))
     }
+
+    if(commandObj['args'].includes("main")){
+      await HttpReq['httpGET'](basePath + mastery + commandObj["params"], apiKey.token)
+      .then(masteryData => {
+
+      })
+    }
+
     return response;
   }
+
 };
