@@ -1,16 +1,8 @@
 {
-  "file": {
-    "location": "./commands/file.js",
-    "description": "Locate a file in the server (not implemented yet)"
-  },
   "summoner": {
     "location": "./commands/summoner.js",
     "description": "Get information from a League of Legends summoner.",
     "arguments": ["rank", "winrate", "main"]
-  },
-  "champion": {
-    "location": "./commands/champion.js",
-    "description": "Get the typical build, runes, etc. from a League of Legends champion (not implemented yet)"
   },
   "list": {
     "location": "./commands/list.js",
@@ -20,5 +12,9 @@
     "location": "./commands/translate.js",
     "description": "Translates the word to the language passed as argument",
     "arguments": ["en", "es"]
+  },
+  "coin": {
+    "location": "./commands/coin.js",
+    "description": "Head or tails simulator"
   }
 }
