@@ -10,11 +10,15 @@
   },
   "translate": {
     "location": "./commands/translate.js",
-    "description": "Translates the word to the language passed as argument",
+    "description": "Translates the word to the language passed as argument.",
     "arguments": ["en", "es"]
   },
   "coin": {
     "location": "./commands/coin.js",
-    "description": "Head or tails simulator"
+    "description": "Head or tails simulator."
+  },
+  "dice": {
+    "location": "./commands/dice.js",
+    "description": "Roll a dice of the desired number of faces."
   }
 }
