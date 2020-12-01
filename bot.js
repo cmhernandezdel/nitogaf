@@ -1,19 +1,19 @@
 const Discord = require('discord.js');
 var auth = require('./keys/auth.json');
 var commandsFile = require('./commands.json');
-var parser = require('./parser.js')
+var parser = require('./parser.js');
 
 var bot = new Discord.Client();
 
 bot.on('ready', () => {
-  console.log("Ready!")
-})
+  console.log("Ready!");
+});
 
 bot.on('message', msg => {
   if(msg.content.substring(0, 1) === '!'){
     var args = msg.content.substring(1).split(' ');
     var cmd = args[0];
-    var commandObj = parser.parse(args)
+    var commandObj = parser.parse(args);
 
     if(cmd in commandsFile){
       let Executor = require(commandsFile[commandObj['command']]['location']);
